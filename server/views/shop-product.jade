@@ -21,8 +21,11 @@ block content
       .row.mx-xl-5.mt-5 
         if product.image
           .col-12.col-md-6
-            img.product__image(src=product.image alt=product.name loading="lazy")
-        
+            img.product__image(src=product.image alt=product.name loading="lazy")    
+        if product.gallery.length  > 1
+          .col-12.col-mt-6
+            gallery.product__gallery(src=product.gallery alt=product.name loading="lazy")
+            +slider(product__gallery)
         
         .col-12.col-md-6
           .mt-5 
